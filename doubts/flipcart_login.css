@@ -1,0 +1,96 @@
+* {
+     box-sizing:border-box;
+}
+
+#maindiv {
+	width:100%;
+	margin:50px;
+	
+}
+
+.textpart {
+	 width:30%;
+	 height:400px;
+     background-color:blue;
+     color:White;
+	 float:left;
+	 padding:2px;
+	 margin:1px;
+}
+.loginform {
+	 width:40%;
+	 height:400px;
+	 background-color:rgba(105,105,105,0.5);
+	 float:left;
+	 padding:2px;
+	 margin:1px;
+}
+h1,p{
+	 padding:20px 0px 0px 15px;
+}
+
+#p1 {
+	font-size:18px;
+	font-family:sans-serif;	
+}
+img {
+	width:300px;
+	height:100px;
+	position:relative;
+	top:60px;
+	left:43px
+}
+form {
+	position:relative;
+	top:40px;
+	left:50px;
+}
+
+input[type=email],input[type=password]{
+	 border:none;
+	 border-bottom:1px dotted black;
+     width:300px;	
+     background-color:rgba(105,105,105,0);	 
+}
+#terms {
+	
+	padding-left:0px;
+}
+
+input[type=button] {
+	width:450px;
+	background-color:orange;
+	text-align:center;
+	padding:15px;
+	color:white;
+	font-size:20px;
+	font-weight:bold;
+	border:none;	
+}
+#otp {
+	background-color:white;
+	color:blue;
+	border:2px solid gray;
+	
+}
+
+#or {
+	padding-left:210px;
+	padding-top:0px;
+}
+
+#create {
+    padding:0px;
+    padding-left:120px;	
+	padding-top:10px;
+}
+button {
+	 width:450px;
+	background-color:orange;
+	text-align:center;
+	color:white;
+	padding:15px;
+	font-size:20px;
+	font-weight:bold;
+	border:none;
+}

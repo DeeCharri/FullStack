@@ -1,0 +1,83 @@
+11/MAY/2022
+========================================================================================================================================================
+Colors
+==============================================================
+In html we can apply the colors in 5 ways
+1)Color Name : Like red,blue,orange etc..
+
+2)rgb(255,255,255)
+the range of rgb is 0 to 255[FF]
+ex: color:rgb(0,255,255)
+
+3)hex color code - we start with #
+ex:color:#ff00ff
+
+4)HSL - hue saturation Lightness
+hue-hue is the degree on the color wheel from 0 to 360.
+0 is red
+120 is green
+240 is blue
+
+Saturation - Saturation is % value. O% means a shage of gray and 100% is the full color
+
+Lightness - Lightness is also % value. 0% is black and 100% is white
+
+ex:hsl(120,10%,20%)
+
+5)aplha - represents the degree of color transparancy
+a)rgba - extension of rgb with alpha
+a value range 0 to 1 
+ex: rgba(0,4,255,0.2)
+b)hsla - extesntion of hsl with alpha
+ex:hsla(120,10%,30%,0.3)
+
+----------------------------------------------------------------------------------------------------------------------------------
+<img> - This tag used to set the images to webpage/website
+syntax: <img src=".../img.jpj"></img>
+It has some attributes
+1)src-source of image or path of image - it's mandatory
+2)width and height - optional
+
+Note:
+we should mention the path as relative path. like ../subfolder/filename. Because if we mention absolute path[like d:/fullstack/image/img.jpg] 
+another developer can't get that image when he/she run that program. because they don't save that pic in path which we have mentioned. so use relative path
+
+backgound/background-image --> used to set the background image.
+<background src=url("path")> </backgorund>
+<background-image src=url("../img.jpg")
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+icons= used to set the icons
+<i> and <span> are used to add the icons.
+class is the mandtory attribute
+
+before adding the icons we have to import the libraries
+we have some libraries they are
+1)Font Awesome
+2)Bootstrap
+3)Google icons
+
+how to import the libraries - we use link cmd to import
+syntax : <link rel="stylesheet" href="">
+----------------------------------------------------------------------------------------------------------------------------------------------
+Fevicons: this is a small image displayed next/beofore to the page title in the browser tab
+we use link tag to add the fevicon
+syntax
+<link rel="icon" href="">
+fevicon file format support
+fevicons icons saved by .ico,.png,.gif,.jpeg,.svg and these are supported by edge,chrome,firefox,opera and safari
+--------------------------------------------------------------------------------------------------------------------------------------------------
+<nav> tag --> this tag used to defines the set navigation links
+<nav>
+<a href="external page address">HTML</a>
+<a href="external page address">CSS</a>
+</nav>
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+<a> -  defines the hyperlink,which is used to link from one page to another
+the most important attribute of the <a> tag is href. this is used to indicates the link destination
+-----------------------------------------------------------------------------------------------------------------------------------------------
+what is entity
+what is inline and noninline
+
+ 

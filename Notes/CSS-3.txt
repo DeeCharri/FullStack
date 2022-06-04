@@ -1,0 +1,398 @@
+
+16th-MAY-2022
+-----------------------------------------------------------------------
+Display Property
+----------------------------------
+used to specify how elements  displayed on the page.
+
+each element has defalut value.most of them  have block and inline values.
+
+we have so many display values, 
+1)inline : used to display the elelements in one line ,but it doesn't add space to after and before the element.
+disply:inline
+
+2)inline-block : used to display the elements in one line[inline element] , and it adds some space to after and before the element.
+
+3)block : used to display the elements in one by one[block elemet], with adding space before and after the  element
+
+4)none : the text will be disappered.
+
+5)flex,grid,table,list-item =====================: same as block
+
+5)contents,inline-grid,inline-flex,inline-table ====       same as inline-block
+
+6)run-in : based on text it will display in block or inline-block
+
+7)initial : it takes deflaut value.
+
+8)inherits : take the features from parent tag
+=====================================================================================================
+Align prorty:
+----------------------------------------------------------------------------------------------
+1)Align elements center
+used to set the element to center for that we use margin as auto
+margin:auto
+
+ex: we have div width of 60%
+margin:auto means in 100% width ,60 is div ,40 is margin distrubute equally to the left and right margin,like 20 and 20
+
+2)Align text:
+we use text-align property
+text-align:center -> used to set the text in center
+we can also have left,right,top,bottom,center,center left etc...
+
+3)Align the image center
+
+set the width of image ,then margin left and right to auto, disply the element in block;
+
+img {display:block;
+     width:40%;
+     margin-left:auto;
+     margib-right:auto
+}
+
+4)We use position  to align left/right
+5)we can also use float to align left and right
+6)clearfix : if one element is taller than another element and it's floated. one element overflow outside of the container , to fix this we use clearfix attribute:
+
+we have content after that we have one image, if we see the image size is big and it overflowing out of contaienr
+Selector:pseudoclass {
+Content:””;
+Clear:both;
+Display:table;
+} 
+
+7)center vertically using padding : we can align the element  vertically center  using padding top and bottom values
+Padding:40px 0px;
+
+8)center vertically using line-height - > this property has the same value of height property;
+Div {
+Line-height:200px;
+Height:200px;
+Border:3px solid black;
+}
+
+9)center vertically using position and transform property :  ****************************************************
+Div {
+   Margin:0px;
+ Position:absolute;
+Top:50%;
+Bottom:50%;
+Transform:translate(-50%,-50%)
+}
+We can mention any values for top,bottom and transform.if want to put it in center use 50% only 
+
+==================================================================================================================================================================
+Combinators: This is used to add the style to specific element. we have 4 combinators
+
+1)descendant selector - we use space between selector and descdendant selector. Descendant selector means - the elements which are under parent element.
+ex:
+
+<div>
+  <h1></h1>
+  <h1></h1>
+  <h1></h1>
+  <h1></h1>
+  <h1></h1>
+</div>
+the all h1 elements are descendant selector of div selector
+
+body .combinators {
+      width:100%
+      height:250px;
+      margin:2px;
+      border:3px inset blue;      
+}
+
+syntax : selector descendantselector {property:value}
+
+2)child selector : this selectors select all child elements of specified selector.
+ we use  > to combine the selector and child selector
+ex:
+/*2. child selector*/
+
+.combinators > p 
+{
+      
+      color:darkorange;
+}
+
+3)adjacent sibling element --> used to add the style to immediate child item for the specified element
+we use + sign 
+ex: 
+div + p {
+      font-weight:bold;
+      color:red;      
+}
+
+4)general sibling element --> used to add the style to all siblings of specified element
+div ~ p {
+background-color:yellow;
+}
+
+============================================================================================================================================================
+* psedu classes : A pseduo classes are used to define the state of elements
+we use : to specify the pseudo classess
+for ex:
+1)style an element when we over cursor on that
+2)style an element when we clicked the link or before clicking the link
+3)style an element when we get foucuess on that element
+
+syntax :
+selector {pseudoclass:value}
+
+1)Anchor pseudo classess
+a):visited -> used to change the style of link after visited
+b):link  --> used to change the style of link before visited
+c):hover --> used to change the style of link when we move the cursor on that link
+d):active --> used to change the style of link when we select that link
+
+ex:
+a:link {
+ color:red
+}
+a:visited  {
+ color:blue
+}
+a:hover {
+ color:pink
+}
+ a:active {
+ color:green
+}
+
+Note: a:hover MUST come after a:link and a:visited in the CSS definition in order to be effective!
+a:active MUST come after a:hover in the CSS definition in order to be effective! Pseudo-class names are not case-sensitive
+
+we can also combine the pseudo classes with html elements
+----------------------------------------------------------------------------------------
+syntax:
+a.classname:pseudoclass {}
+
+ex:
+a.csslink:visited {
+ color:red
+}
+ a:link {
+ color:blue
+}
+ a.csslink:hover {
+ color:pink;
+ font-size:50px;
+}
+ a:active {
+ color:green
+}
+
+.pseduclass p:hover {
+      
+      background-color:green;
+}
+
+#######ex: hover on div element to show the p tag
+
+.pseduclass p {
+      display:none;
+      background-color:green;
+      
+}
+.pseduclass div:hover p {
+      display:block  # should define the display as block in div where we are overing the cursor
+}
+
+#### if we want add the style to  first/last child of specified element . or we can do it for even/odd elements
+ we use selector:first/last-child_element {property:value}
+ex:
+.pseduclass div:first-child {
+      color:red;
+}
+.pseduclass div:nth-child(even) {background-color:purple}
+
+.pseduclass div:nth-child(odd) {font-size:25px;}
+
+=================================================================================================================================================================
+
+pseudo class elements: used to add the style to specific part of elements
+ex:
+1)style the first character/line of element
+2)style the before/after of specified element
+we use :: to mention the specifed elements
+we have some pseudo class elements ,that are
+
+a)::first-line --> used to add the style to first element of text of specific element
+------------------------------------------------------------------------------------
+Note: The ::first-line pseudo-element can only be applied to block-level elements.
+
+The following properties apply to the ::first-line pseudo-element:
+
+font properties
+color properties
+background properties
+word-spacing
+letter-spacing
+text-decoration
+vertical-align
+text-transform
+line-height
+clear
+
+Notice the double colon notation - ::first-line versus :first-line
+
+The double colon replaced the single-colon notation for pseudo-elements in CSS3. This was an attempt from W3C to distinguish between pseudo-classes and pseudo-elements.
+
+The single-colon syntax was used for both pseudo-classes and pseudo-elements in CSS2 and CSS1.
+For backward compatibility, the single-colon syntax is acceptable for CSS2 and CSS1 pseudo-elements
+
+===========================================================================================================================================
+
+b)::first-letter  --->used to set the style to 1st character/letter of text of all lines of specified element
+
+Note: The ::first-letter pseudo-element can only be applied to block-level elements.
+
+The following properties apply to the ::first-letter pseudo- element: 
+
+font properties
+color properties 
+background properties
+margin properties
+padding properties
+border properties
+text-decoration
+vertical-align (only if "float" is "none")
+text-transform
+line-height
+float
+clear
+
+note: we can also combine pseudo elements with html classes
+
+ex:
+.pseduclass_element::first-letter {
+      font-weight:bold;
+      color:red
+}
+div.pseduclass_element::first-line {
+      color:purple;
+}
+
+note: we can also add pseudo elements to same element
+ex:
+p::first-line {
+      
+      color:green
+}
+P::first-letter {
+   background-color:green
+}
+==================================================================================================================
+b)::before/after ====> used to set style to before/after of specified element or to add the content to before/after of the specified element
+syntax : selector::before {content/color/etc..=value}
+
+ex:
+.pseduclass a::before {
+      
+      content:"Hi I am "
+      
+} 
+.pseduclass a::before {
+      
+      content: url('https://icon-library.com/images/small-star-icon/small-star-icon-8.jpg') # for adding the image
+      
+} 
+=======================================================================================================================
+c)::marker --> this is used to add the style to marks of list [numbers,bullets etc..]
+syntax:
+ul/ol ::marker {} -> property set to only ul/ol tag
+::marker {} -> to both ul and ol
+
+ex:
+::marker {  /*set to all marks */
+      
+      color:red;
+}
+ul ::marker { /*set to only ul marks*/
+      font-size:20px
+}
+
+============================================================================================================================
+d)::selection Pseudo-element --> this is used to add the style to selected elements
+here we can use color,background,cursor and outline property 
+
+ex:
+::selection {
+      
+      background-color:yellowgreen;
+}
+
+
+=====================================================pseudo elements========================================================================================
+
+Selector                         Example                                           Example description
+:active                               a:active                                        Selects the active link
+:checked                       input:checked                                        Selects every checked <input> element
+:disabled                       input:disabled                                        Selects every disabled <input> element
+:empty                               p:empty                                        Selects every <p> element that has no children
+:enabled                       input:enabled                                      Selects every enabled <input> element
+:first-child                     p:first-child                                      Selects every <p> elements that is the first child of its parent
+:first-of-type                       p:first-of-type                              Selects every <p> element that is the first <p> element of its parent
+:focus                           input:focus                                      Selects the <input> element that has focus
+:hover                               a:hover                                        Selects links on mouse over
+:in-range                       input:in-range                                        Selects <input> elements with a value within a specified range
+:invalid                       input:invalid                                        Selects all <input> elements with an invalid value
+:lang(language)                       p:lang(it)                                        Selects every <p> element with a lang attribute value starting with "it"
+:last-child                       p:last-child                                        Selects every <p> elements that is the last child of its parent
+:last-of-type                    p:last-of-type                                        Selects every <p> element that is the last <p> element of its parent
+:link                               a:link                                                Selects all unvisited links
+:not(selector)                       :not(p)                                            Selects every element that is not a <p> element
+:nth-child(n)                    p:nth-child(2)                                   Selects every <p> element that is the second child of its parent
+:nth-last-child(n)               p:nth-last-child(2)                                Selects every <p> element that is the second child of its parent, counting from the last child
+:nth-last-of-type(n)               p:nth-last-of-type(2)                                Selects every <p> element that is the second <p> element of its parent, counting from the last child
+:nth-of-type(n)                       p:nth-of-type(2)                                Selects every <p> element that is the second <p> element of its parent
+:only-of-type                       p:only-of-type                                        Selects every <p> element that is the only <p> element of its parent
+:only-child                       p:only-child                                        Selects every <p> element that is the only child of its parent
+:optional                       input:optional                                        Selects <input> elements with no "required" attribute
+:out-of-range                       input:out-of-range                                Selects <input> elements with a value outside a specified range
+:read-only                       input:read-only                                Selects <input> elements with a "readonly" attribute specified
+:read-write                       input:read-write                                Selects <input> elements with no "readonly" attribute
+:required                       input:required                                        Selects <input> elements with a "required" attribute specified
+:root                               root                                             Selects the document's root element
+:target                               #news:target                                        Selects the current active #news element (clicked on a URL containing that anchor name)
+:valid                               input:valid                                        Selects all <input> elements with a valid value
+:visited                       a:visited                                        Selects all visited links
+
+==============================================================pseudo classess========================================================================================
+
+Selector      Example      Example description
+:active      -------->>>>  a:active      -------->>>>     Selects the active link
+:checked -------->>>>     input:checked -------->>>>     Selects every checked <input> element
+:disabled -------->>>>     input:disabled -------->>>>     Selects every disabled <input> element
+:empty -------->>>>     p:empty -------->>>>     Selects every <p> element that has no children
+:enabled -------->>>>     input:enabled -------->>>>     Selects every enabled <input> element
+:first-child -------->>>>     p:first-child -------->>>>     Selects every <p> elements that is the first child of its parent
+:first-of-type -------->>>>     p:first-of-type -------->>>>     Selects every <p> element that is the first <p> element of its parent
+:focus -------->>>>     input:focus -------->>>>     Selects the <input> element that has focus
+:hover -------->>>>     a:hover -------->>>>     Selects links on mouse over
+:in-range -------->>>>     input:in-range -------->>>>     Selects <input> elements with a value within a specified range
+:invalid -------->>>>     input:invalid -------->>>>     Selects all <input> elements with an invalid value
+:lang(language) -------->>>>     p:lang(it) -------->>>>     Selects every <p> element with a lang attribute value starting with "it"
+:last-child -------->>>>     p:last-child -------->>>>     Selects every <p> elements that is the last child of its parent
+:last-of-type -------->>>>     p:last-of-type -------->>>>     Selects every <p> element that is the last <p> element of its parent
+:link -------->>>>     a:link -------->>>>     Selects all unvisited links
+:not(selector) -------->>>>     :not(p) -------->>>>     Selects every element that is not a <p> element
+:nth-child(n) -------->>>>     p:nth-child(2) -------->>>>     Selects every <p> element that is the second child of its parent
+:nth-last-child(n) -------->>>>     p:nth-last-child(2) -------->>>>     Selects every <p> element that is the second child of its parent, counting from the last child
+:nth-last-of-type(n) -------->>>>     p:nth-last-of-type(2) -------->>>>     Selects every <p> element that is the second <p> element of its parent, counting from the last child
+:nth-of-type(n) -------->>>>     p:nth-of-type(2) -------->>>>     Selects every <p> element that is the second <p> element of its parent
+:only-of-type -------->>>>     p:only-of-type -------->>>>     Selects every <p> element that is the only <p> element of its parent
+:only-child -------->>>>     p:only-child -------->>>>     Selects every <p> element that is the only child of its parent
+:optional -------->>>>     input:optional -------->>>>     Selects <input> elements with no "required" attribute
+:out-of-range -------->>>>     input:out-of-range -------->>>>     Selects <input> elements with a value outside a specified range
+:read-only -------->>>>     input:read-only -------->>>>     Selects <input> elements with a "readonly" attribute specified
+:read-write -------->>>>     input:read-write -------->>>>     Selects <input> elements with no "readonly" attribute
+:required -------->>>>     input:required -------->>>>     Selects <input> elements with a "required" attribute specified
+:root -------->>>>     root -------->>>>     Selects the document's root element
+:target -------->>>>     #news:target -------->>>>     Selects the current active #news element (clicked on a URL containing that anchor name)
+:valid -------->>>>     input:valid -------->>>>     Selects all <input> elements with a valid value
+:visited -------->>>>     a:visited -------->>>>     Selects all visited links
+
+======================================================================================================================================================================

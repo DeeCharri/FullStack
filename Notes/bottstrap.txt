@@ -1,0 +1,126 @@
+Bootstrap : This is free front-end framework  for easier  and faster development.
+It has all html and css based design templates for button,forms,models,columns,tables etc..
+It is used for to make the page more responsive.
+
+===================================================================================================
+what is optimize : To keep our project lean, responsive and maintainable.
+
+here we just need to add the classed to our tags which we have mentioned in our page.
+we can add more than one class
+
+<div class="container container-sm">
+
+classes:
+default container
+1.container:This is fixed width container
+
+responsive container - this is allow to speficy 100% wide until the spcified breakopint is reached
+1.container-sm -> 100% wide until it reached small breakpoint
+2.container-md -> 100% wide until it reached medium breakpoint
+3.container-lg -> 100% wide until it reached large breakpoint
+4.container-xl -> 100% wide until it reached extra large breakpoint
+5.container-xxl --> extra extra large
+
+class fluid:this is used for full widht, it cover the width of entire screen
+1.container-fluid:
+
+Grid:
+=========================================================================================================================
+Boot strap grip contains list of rows and columns to layout and align the content.
+grid has 12 columns , each column width is 100%/12 =8.333
+we should have to add columns from 1 to 12. if we add the columns the columns count will be 12 or less than 12.
+
+if we want to mneiton the columns thr parent sohuld be row class.
+
+<div class="row">
+<div class="col-1"></div>
+<div class="col-3"></div>
+<div class="col-2"></div>
+</div>
+
+Grid Options: we have 6 default breakpoints
+1.xs- extra small
+2.sm - small
+3.md -medium
+4.lg -large
+5.xl-extra large
+6. xxl - extra extra large
+
+classes:
+1.if we want to make the equal width of col , we use "col" class.
+
+2.variable width content:
+we use col-{breakpoint}-auto classes used to make the column size based on the natural width of their content.
+
+3.Responsive classess : Bootstrap grid has 6 tiers of pre-defined classes for building responsive layouts.
+
+4.stacked to horizontal : this is used to set the grids/divs/columns in horizontal line once it reached breakpoints.
+we have 6 breakpoints. if we mnetion breakpoint as small , it will be breaked once it reached small break point
+ex:
+we have 3 classes , they placed in stack manner , minize screen until it reached small/medium/any break point ,
+then 3 columns will be arranged one by one horizontally like rows
+for that we have to "col-sm"
+
+5.Mix and match : here we can use any columns like 1 to 12
+
+6.Rows columns : we use rows-cols-* to giive the tyle to both rows and columns
+
+7.Nesting: to add a style to our tags within tags / To nest your content with the default grid
+===========================================================================================================================================================
+
+COlumns: Boot strap will help us to modify the columns using allignments,orderring and offsetting
+
+Allignments: to allign the element vertically/horizontally
+1)vertical : we have 3 columns ,we want to make them more interactuve/more colorfull/ we use align-items-center/left/right/top/bottom/* and we use align-self-*
+
+2)horizontal: here we use justify-content-center
+
+3)column wrapping : we have placed 12 columns in a single row ,rows willl be set until it reaches the 100% width after  they will wrap on to new line.
+
+4) column breaks : if we want to breaking columns and set them into new line , a simple hack is set the one column element as 100% width
+
+5,Reordering - 
+   a.order classes - we useed for controling the visual order of content. we use order-breakpoint we have 1 to 5 break points.we have spevifed them in col class
+in the below ex:
+<div id="div1" class="col order-5" style="border:1px solid green;">
+					     First in DOM, no order applied
+					 </div>
+					 <div id="div2" class="col order-1" style="border:1px solid green;">
+					     First  First in DOM, no order applied First in DOM, no order applied First in DOM, no order applied
+					 </div>
+					 <div id="div3" class="col order-3" style="border:1px solid green;">
+					     First in DOM, no order applied First
+					 </div>
+
+before adding the order , we display the div tags like this, div1,div2,div3
+after adding the order, div will be displayed based on order numner[1-5] .in above ex div 2 is in 1st place, div3 is in 2nd place and div 1 is in 3rd place
+
+6)offset columns : we can make offset column by using offset class and margin utilities
+a.offset class: used to move the columns to right side using offset-md-1/23/4//*
+if we mention 3 it moves over 3 classes
+
+b.in margin utilies we use me-auto and ms-auto/ms-breakpoint[sm/md/etc]-auto to move the columns
+if we are using class me-auto the other class should be col-auto
+if we are using class ms-auto/ms-break-point we should use col-breakpoint-[1 to 12] class
+
+=========================================================================================================================================================
+
+background colors
+we use 
+bg-primary
+bg-secondary
+bg-light,
+bg-danger,
+bg-dark,
+bg-success,
+bg-info
+bg-warning
+bg-body
+bg-white
+bg-transprant
+
+===========================================================================================================================================================
+
+gutters are used to give the padding between 2 columns. we use gx-*[any numbers] in parent class and 
+we use p-[the number should be eq/less than which we have mentoined in gx-] in child class for padding. 
+ex: if we mention gx-5 ,the p-[it should be equals to 5 less than 5]

@@ -1,0 +1,158 @@
+
+Solution
+101
+The reason for this solution is as follows: JavaScript placesempty as a value for indices 3 - 99. Thus, when you set the value of the 100th index, the array looks like:
+
+
+And you get the length as 101.
+
+Question
+How can you double elements of an array using reduce? Please note that you cannot create additional variables.
+
+Solution
+const arrayOfNumbers = [1, 2, 3, 4];
+arrayOfNumbers.reduce((accumulator, currentValue, index, array) => array[index] = array[index] * 2);
+Question
+What is the output of the following code snippet?
+
+let arrayOfLetters = ['a','b','c','d','e','f'];
+const anotherArrayOfLetters = arrayOfLetters;
+arrayOfLetters = [];
+console.log(anotherArrayOfLetters);
+Solution
+['a','b','c','d','e','f']
+When we carry out the above (containing arrayOfLetters = []) you create a new array and break the old reference. Thus, anotherArrayOfLetters has no effect on it since it is still pointing to the old array.
+
+Question
+How could you print unique values from an array?
+
+const arrOfNum = [1, 2, 2, 4, 5, 6, 6];
+console.log(getUniqueValues(arrOfNum)); // [1, 2, 4, 5, 6]
+Solution
+function getUniqueValues(arrOfNum) {
+  const set = new Set(arrOfNum);
+  return [...set];
+}
+A value in the Set may only occur once; it is unique in the Set's collection.
+
+Question
+How could you destructure array elements?
+
+Solution
+Without destructuring:
+
+const address = ["583, Margaret Street", "LOS ANGELES, CA", "USA"];
+console.log(
+  "Address 1: " + address[0],
+  "Address 2: " + address[1],
+  "Address 3: " + address[2]
+);
+With destructuring:
+
+const [address1, address2, address3] = ["583, Margaret Street", "LOS ANGELES, CA", "USA"];
+console.log(
+  "Address 1: " + address1,
+  "Address 2: " + address2,
+  "Address 3: " + address3
+);
+
+What is the value of x & y?
+
+const fn = (a, ...numbers, x, y) => {
+    console.log(x, y)
+};
+Solution
+SyntaxError: Rest parameter must be last formal parameter
+Rest parameters must always be the last argument to a function.
+
+Question
+Guess the output of the following code:
+
+var hero = {
+    _name: 'John Doe',
+    getSecretIdentity: function (){
+        return this._name;
+    }
+};
+var stoleSecretIdentity = hero.getSecretIdentity;
+console.log(stoleSecretIdentity());
+console.log(hero.getSecretIdentity());
+Solution
+undefined
+John Doe
+The first console.log prints undefined because we are extracting the method from the hero object, so stoleSecretIdentity() is being invoked in the global context (i.e., the window object) where the _name property does not exist.
+
+Question
+What is the output of the following code snippet?
+
+function greet() {
+    console.log(this.name);
+}
+const sayHello1 = greet.bind({name: "Tom Cruise"});
+sayHello1();
+const sayHello2 = sayHello1.bind({name: "Zac Efron"});
+sayHello2();
+Solution
+Tom Cruise
+Tom Cruise
+Binding an already bound function does not change the execution context.
+
+Question
+What will be logged to the console after running the snippet below?
+
+function greet() {
+  setTimeout(function() {
+    console.log(this.name);
+  }, 500);
+}
+greet.call({name: 'Daniel Craig'});
+Solution
+undefined
+In the snippet above, console.log is called inside an anonymous callback function passed to setTimeout. 
+In this case, the callback function will create a context that is not explicitly set. 
+In non-strict mode, this will be set to the global object. 
+Even if we are calling the greet function with call and we are setting the context of hello to {name: 'Daniel Craig'}, 
+the callback function will not use the same context as the hello function and it will look for the name property on the global object.
+ If a name property is defined it will return the value, otherwise it will log undefined.
+
+Question
+What will be logged to the console?
+
+function Employee(name) {
+    this.name = name;
+}
+Employee.prototype.getName = () => {
+    return this.name;
+};
+const jason = new Employee('Jason');
+console.log(jason.getName());
+Solution
+undefined
+The reason is that the snippet above is using an arrow function for getName.
+Arrow functions cannot create a context and therefore this will be the global object in non-strict mode.
+
+Question
+What is wrong with the code written below?
+
+var something = null;
+var randomFunction = function () {
+  var somethingElse = something;
+  var unused = function () {
+    if (somethingElse)
+      console.log("hi");
+  };
+  something = {
+    longStr: new Array(1000000).join('*'),
+    someMethod: function () {
+      console.log(someMessage);
+    }
+  };
+};
+setInterval(randomFunction, 1000);
+Solution
+somethingElse is only referenced in the main body of randomFunction, and in unused. unused itself (which we never even run) gets cleaned up once randomFunction ends. The only thing from randomFunction that escapes is the second closure, someMethod. And someMethod doesn't refer to somethingElse at all!
+
+So even though there’s no way for any code to ever refer to somethingElse again, it never gets garbage collected. Why? Well, the typical way that closures are implemented is that every function object has a link to a dictionary-style object representing its lexical scope. If both functions defined inside randomFunction actually used somethingElse, it would be important that they both get the same object, even if somethingElse gets assigned to over and over, so both functions share the same lexical environment.
+
+Now, Chrome's V8 JavaScript engine is apparently smart enough to keep variables out of the lexical environment if they aren't used by any closures: that's why the first example doesn't leak. But as soon as a variable is used by any closure, it ends up in the lexical environment shared by all closures in that scope. And that can lead to memory leaks.
+

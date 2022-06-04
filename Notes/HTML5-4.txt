@@ -1,0 +1,49 @@
+forms-this tag used to collect the user inputs and send it to server for processing
+<form> tag used to create a html form
+<form> is a container which contains list of input,radio buttons,text fileds,buttons etc..
+
+html form elements/tags
+1)<input> : input tag specifies the input field where user can enter the data
+ 
+attributes : name,type,value,placeholder
+
+#)name=is name of the input- we can give any name to that field
+#)value= the value of input field-we can give anything
+#)type=the type of input like text or password or email etc
+
+we have set of values to the type ,that are
+the default value of type is text
+
+<input type="button">
+<input type="text">
+<input type="email">
+<input type="password">
+<input type="image">
+<input type="hidden">
+<input type="date">
+<input type="color">
+<input type="file">
+<input type="checkbox">
+<input type="radio">
+<input type="reset">
+<input type="range">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="time">
+<input type="url">
+<input type="week">
+
+===============================================================================================================================
+2)<label>- this is for label field , here users can't enter the data
+
+3)<select>
+4)<textarea>
+5)<button>
+6)<fieldset>
+7)<legend>
+8)<datalist>
+9)<output>
+10)<option>
+11)<optgroup>
+

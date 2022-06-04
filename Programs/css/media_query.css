@@ -1,0 +1,59 @@
+* {
+	box-sizing:border-box;
+}
+
+body{
+    width:100%;
+	height:700px;
+	background-color:pink;
+	color:red;
+}
+/*
+@media only screen and (max-width:500px)   /*from 0 to 500px ,the color will be lightblue ,after that it chnaged to pink
+{
+	body {background-color:lightblue; }
+	
+}
+@media only screen and (min-width:900px) /*from 900 to px to 100% width , the color of the text and size of the text will be changed to darkblue and 60px resp
+{
+	body{
+		color:darkblue;
+		font-size:60px;
+	}
+	
+} */
+/*add a break point*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.row::after {
+	clear:both;
+	display:block;	
+}
+[class*="col-"]
+{
+	float:left;
+	padding:15px;
+	border:1px dotted black;
+}
+@media only screen and (max-width:768px){ /*if the screen gets smaller than 768px ,the size of the width should be 100%*/
+[class*="col-"]
+{
+	width:100%
+}
+div{
+	background-color:white;
+	
+}
+}
+

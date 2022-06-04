@@ -1,0 +1,219 @@
+CSS - Cascdaing style sheet
+CSS descibes html element to how disply on page
+CSS files should be saved by .css
+
+This is a language used to style an HTML document.
+
+We have 3 parts in CSS
+----------------------------------------------------------------------------------------------------------------------------------
+1)iniline CSS - we define the style within the tag or element
+ ex: <body style="color:red;font-width:bold">
+----------------------------------------------------------------------------------------------------------------------------------
+2)internal CSS = here we define the styles in header part of html section
+ex: 
+<html>
+<head>
+<style>
+  body
+      {
+        background-color:black;
+      }
+</style>
+</head>
+<body></body>
+</html>
+
+syntax:
+selector{
+property:vlaue;
+property:vlaue;
+}
+-------------------------------------------------------
+3)external CSS: In this , we have defined css in different file and importing into out page using below cmd
+<link rel="stylesheet" href="path of css file">
+This should be mentioned in head part
+
+syntax:
+selector{
+property:vlaue;
+property:vlaue;
+}
+------------------------------------------------------
+
+
+
+we name the html elements  using id and class
+id should be diff name
+class -we can give the same name for group of class
+*-INDICATES all elelments oh html doc
+-------------------------------------------------------------------------------
+in above we mention selector , i,e nothing element/tag or name of the tags.
+we can define the selctor in 2 ways
+1)customzied selector - we use id /class name of elelemt
+2)HTML selectors  - we use tag name only link body,p,div
+
+* how to use the the id in css = use #id
+---------------------------------------------------
+* how to use the class in css = use .classname / tagname.classname
+---------------------------------------------------------------------------
+*how to use 2 tags at time = <tag1>,<tag2> {}
+------------------------------------------------------------
+* let's assume , we have <div> tag ,under that we have <h1> tag , we want add the style to h1 of div tag, how we will do
+if we mention just h1 , style will apply to all h1 tags which has html doc, so we use below tag
+div h1 {} - like that we need to mention
+------------------------------------------------------------------------------------
+
+comment line --> /*.......................*/
+====================================================================================================================================================================
+background propeties 
+note background property is the shortend property for the below properties, we can mentoin all the things in one value like border property do [border:1px solid black]
+------------------------------------------------------------------------
+1)background-color : useed to specify the bg color of element
+background-color:red
+
+2)background-image : used to set the bg image for element
+background-image:url('path of image')
+
+3)background-repeat:by default background image property repeats the image horizontally and vertically.
+to stop that we use this property with not-repeate value
+if we want to repeate that  image horizontally use "repeate-x" as value , for vertical use "repeate-y" as value
+
+4)background-position : used to set the position for background image
+background-image:value
+
+we can give different diff values
+----------------------------------------
+a)values are left top,left bottom,left centre,right top,right bottom,right center,center top,center left and center bottom
+we can use anyone of them.
+
+b)we can give x%y% - x means horizontal y means verticle 
+0% 0% --> left top corner
+100% 100% --> right top corner
+if we mention only one value ,other will be 50% by defalut
+default value : 0% 0%
+
+c)xposypos - x means horizontal y means verticle, here units can be pixels ;like 10px 20px. if we mention only one value ,other will be 50%
+
+5)background-attachment=it specifies the bg image should scroll or be fixed.by default it will be croll
+values
+background-attachment:fixed
+background-attachment:scroll
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+==================================================================================================================================================================
+borders properties
+
+border is the shortend property for the below properties
+
+1)border-width --> used set the width to the border
+
+ex: border-width:thin/medium/thick/npx
+
+border-width:thin[1value] ---> set thin to be top,right,bottom and left
+border-width:thin thick ---> top and bottom set to be thin and right and left set to be thick
+border-width:thick medium thin ---> top set to be thick, left and right set to be medium and thin set to be bottom
+border-width:thick medium thin 20px --> top set to be thick,right set to be medium,bottom set to be thin and left set to be 20px
+
+2)border-style --> use to set the style to the border.
+styles are dotted,double,solid,dashed,none,hidden,inset,outset,ridge, groove
+ex: border-style:solid/double/dashed/hidden/etc
+
+3)border-color--> use to set the color to the border.
+border-color:red
+
+4)border-radius --> use to make curve border
+ex: border-radius:20px 
+==================================================================================================================================================================
+margin properties :give the space to outside of element.
+margin is the shortend property for the below properties.
+
+1)margin-top 2)margin-bottom 3)margin-left 4)margin-right
+
+margin:10px 20px 30px 40px -> here 10 px set to top margin,20 to right margin,30 to bottom margin and 40 to left margin
+
+margin:10px 30px 15px -->10 to top,30 to right and left , 15 to bottom
+
+margin:20px 10px --> 20 to top and bottom , 10 to left and right
+
+margin:10-> 10 set to all margin like top right left and bottim
+=====================================================================================================================================================================
+
+padding : this property used to set the space to within the element
+
+in padding also we have top,right, bottom and left
+
+======================================================================================================================================================================
+===========================================================IMP note=====================================================================================
+********************************************************************************************************************************************************
+By default , width and height of the element caluclated by like below
+
+width=width+padding+border
+height=height+padding+border
+
+It means , if we set the width/ height to the element, the element often appears bigger than we have set 
+because the element's border and padding added to the width/height of element
+
+so every time , if we add the padding ,the element size should increases. 
+how to override this issue. for that we use "box-sizing" property with "bordere-box" value.
+
+if we use border-box, width and border will be same size
+
+difference between with "border-box" and without "border-box"
+
+with "border-box" : width and height size will be same  element's padding and border not added  to width/height of the element
+without border-box : width and height size will not be same bcz the element's padding and border added to the width/height of the element
+
+ 
+********************************************************************************************************************************************************
+========================================================================================================================================================
+
+Positions property
+-----------------------------------------------------
+The position property used to set the position for an element
+we have 5 position properties
+1)Static : This is default value.The element is positioned acc to the normal flow of html doc.This property doesn't effect on top,right,left,bottom,z-index values.
+
+2)Absolute : This position has parent relation with relative position.It should be defined within relative position's element.
+Relative position is the parent of absolute position.This position fixed to relative position element part
+
+3)Fixed : This is used to fix the element in web page,it will not while scrolling.
+
+4)Sticky: This sticky element position based on user's scroll position.If we scroll,the element also move acc to that until it[element which has sticky property]
+reaches the top border of webpage.once it's reached the border,it will be fixed.
+
+5)Relative :this  relatively adjust the element based on top,right,left and bottom properties.
+----------------------------------------------------------------
+
+Notes:
+1)
+-webkit - In some web browsers,some styles will not work in that time we use -webkit- property
+syntax: syntax : Property: -webkit- value
+ex: div{position: -webkit- static}
+2)
+z-index : to bring the elelment on the top of the page. we use z-index. 
+usually we use the -1,0,1,9999 values for z-index. 
+if z-index has higher value ,that element will come first/top of the page.
+3)
+margin-left/right/t/b/*:auto value
+ex: margin:20% auto
+here we mention the top and bottm as 20%, right and left as auto.that means in 20% we still have 80% space ,in that right and left will take equally like 40 and 40
+
+
+4)
+display-block -- will ask in monday' class
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+

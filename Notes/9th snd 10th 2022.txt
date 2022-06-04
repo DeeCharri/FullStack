@@ -1,0 +1,101 @@
+Package - min 12LPA
+
+Full Stack Web Development
+Front technologies
+1)HTML5 and HTML
+2)CSS3
+3)JavaScript
+4)JQuery
+
+BackEnd
+1)Node.js
+
+Database
+1)MySql
+2)MongoDB
+
+Version Control
+1)GIT
+
+Project Management
+1)Jira
+
+What is frontend
+The part that users actullly see and interacts with
+or
+whatever we can see it on browrser
+
+What is BackEnd
+The part that allows to operate the code and user can't see it.
+or
+This part accepts the requests from front end and do some operations on that
+
+What is DB
+This is collection of tables that contains list of information
+
+What is FullSTack 
+Fullstack is a combination of frontend,backend and database
+
+FrontEnd <--> BackEnd <--> Database
+User sends the request to backend through front end ,then backend [this is one server ]will perform some operations , backend server interacts with DB server 
+and fetch the related info , then send it to front end ,den user can see that result.
+
+Clients are nothing but we only /users.
+
+Once we developed the website we host it into public server . so that all users/people can use that application.
+each website has it's own domain name. 
+for ex: google.com is domain main
+domain name : The name given to each website
+domain has it's own ip address. for ex google.com ip address 258.0.124.8[just for ex]
+once we enter the domain name (google.com)--> it will check the related ip address --> start doing the operation -> den we can see the home page of google.com
+
+FrontEnd
+-----------------
+Languages
+1)HTML5
+2)CSS3
+3)JavaScript
+
+Basics of above languages
+HTML5 --- HyperText markup language
+--------------------------------------
+This is a language used to display the text.
+Each file saved by .html extension
+HTML has colors,font styles,size etc
+Latest Version -5
+
+
+CSS3 - Cascading style sheets
+----------------------------- 
+Latest Version - 3
+This a lanaguage used for styleing purpose
+We can save the css files in css exetsion
+
+Libraries of CSS3
+1)Bootstrap
+2)Materialize
+3)semantic
+
+JavaScript 
+---------------------------------
+This is a language used to make the website/webpage view more dynamic
+or 
+smooth user interaction/dynamic cotnent
+
+Libraries
+1)Jquery - this is simplified version of JS. ex: in js we use who am i but in JQuery we use wmi
+2)React JS - Extension of Java script
+3)Angular
+4)Vue
+
+
+
+
+
+
+
+ 
+
+
+
+ 

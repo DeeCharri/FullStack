@@ -1,0 +1,242 @@
+10/MAY/2022
+=========================================================================================================================================================
+HTML5
+Comment --> a note explanation / used to explain the codes and this will be visible to developers, not users
+<!-- .................................................... --> for single and multiple comment
+-------------------
+HTML contains below parts
+Head and Body
+
+Header --> It has the info of the website
+--------------------------
+1)Title
+2)Keywords
+3)Description
+4)Other Links to Styles and JS
+5)content
+
+Webpage - This is a single page
+Website - This is a list of webpages
+
+Header defined by <head> tag ---> <head>  </head>
+
+title will be defined by title tag ---> <title>  </title>
+
+keywords,description and content defined by meta tag ----> <meta .....> </meta>
+
+HTML <meta> tag
+--------------------------
+This tag defines the metadata of an HTML document. Metadata is data about data
+This tag is always defined under the <head> tag.
+This tag is used to define the characterset, keywords, page description,author of the document, and viewport settings
+
+Attributes of <metadata>
+-----------------------------------
+name-->it specifies the name of metadata [value-keywords,description,author,viewport]
+http-equiv --> 
+content --> values[text]  specifies the value assosicated with http-equiv/name
+charset --> value[character_set] --> specifies the character encoding for the html document
+
+Body
+-----------------------------------------------
+This tag contains the actual info of the webpage
+the body also contains header and footer part --> it's not mandatory
+
+This tag defined by body tag -------------> <body> </body>
+
+Heading Tags- we have 6 heading tags those are h1,h2,h3,h4,h5,h6
+---------------------------------------------------------------
+These tags are used to define the headings of pages
+
+<p> tag defines a paragraph
+------------------------------
+Browsers automatically add a single blank line before and after each <p> element
+
+Formatting tags
+---------------------------------
+These tags are used to format the text
+
+<b> -bold tag
+<i> - italic tag
+<strong>-strong tag same as bold
+<sup> - super tag
+<sub> -sub tag
+<del> - del tag used to strike out the line
+<big> - big tag
+
+Division tag
+-------------------------------------------
+This tag defines a division or secion in an html document.this tag is used as a container
+<div>  </div>
+<pre> - this tag used to disply the content as we typed ,if you want to display as we types only ,use <pre> after <div> tag
+Nested tag - the tag between tag
+
+RGB(Red Green Black) and RGBA (This is an extension of RGB with alpha channel)colors in HTML
+----------------------------------------------------------------------------------------------------
+In html colors can be specified by RGB
+Each parameter (red green black) defines the intensity of the color with a value between 0 to 255
+That means there are 256 * 256 * 256 = 16777216 possible colors
+
+HEX color values in HTML
+-------------------------------
+In html, a color can be defined by hexadecimal value in the form: #rrggbb
+rr-red
+gg-green
+bb-black
+
+The values between 00 toff
+
+#ffffff - white
+#ff0000 - red
+#00ff00 -green
+
+The basic properties of tags which we are using for styling purpose
+-----------------------------
+Height --> used to set the height of an element
+
+Width --> used to set the width of an element
+
+Background-color --> sets the background color of the element
+
+color --> sets the color of the text
+
+border --> this is used to set the border to the element
+
+float --> This property is used for positioning and formating the content [change the position to left/right/center]
+
+padding --> This property used to add the space around an element
+
+min-height/width --> It defines the min height/width of element
+
+max-height/width --> It defines the max height/width of elememt
+
+margin - This property sets the margin of an element to all side left,right,top and bottom
+This property take one to 4 values
+exs: 
+<div margin:50px> --> all four margins[left,right,top and bottom] will be 50px
+<div margin:50px 10px> ---> here top and bottom margin will be 50px , right and left margin will be 10px
+<div margin:50px 10px 20px> ---> here top will be 50px,left and right will be 20px,and bottom will be 20px
+<div margin:50px 10px 20px 30px>---> here top will be 50px,right will be 10px,bottom will be 20px and left will be 30px
+
+difference between padding and margin
+-----------------------------------------------
+Both properties are used to add the space around the element,but the margin will insert the space around the border
+while padding will insert the space within the border
+
+Syntax
+------------------------
+<!DOCTYPE html>
+<html>
+    <head>
+
+
+    </head>
+    <body>
+
+
+    </body>
+</html>
+
+What is inline
+Inline elements display in a line. They don't force the text to display on another/new line.
+the anchor tag is an inline tag - we can put several lines but they will display in a single line
+
+What is block
+Block elements take up as much space as possible by default.
+Eachblock level element starts a new line
+ex: <p> <ol> <ul> and <dl>
+<article>,<section>,<div>
+
+example:class1.html
+-------------------------------------------
+<!DOCTYPE html> <!-- First wehave to declare the type of file/document -->
+<html>
+    <head>
+      <title> FullStack WebDevelopment </title>
+	  <meta charset="UTF-8">
+	  <meta name="description";content="This page helps you to understand the concepts of Fullstack webdevelopment">
+	  <meta name="keywords";content="FullStack,webdevelopment">
+	  <meta name="author";content="Deepa T">
+	  <meta name="viewport";content="width=device-width,initial-scale=1.0">
+	</head>
+	<body style="border:3px solid blue;margin:10px 10px 10px 10px;padding:10px">
+	      <h1>FullStack WebDevelopment</h1>
+		  
+		  <!--<p style="border:1px solid black;Font-width:bold;font-size:30px;float:right;">HomeAboutContact</p> -->
+		  <p>FullStack developer is a person <strong>who develops the both client  and server </strong> software </p>
+		  <p><b>FrontEnd </b>--> The part that users actully <i><b>see</b></i> and <i><b>interact</b></i> with</P>
+		  <p><b>BackEnd </b>---> The backend part refers to programs code that allow it to operate and that can't be accessed by user</p>
+		  <h3>Advantages</h3>
+		  <div style="border:3px solid black;background-color:#FFDAB9;color:Black"> 
+		    <pre>
+			1.We can learn the all techniquies involved in development of project
+			2.We can switch between front/back development based on requirements
+            </pre>			
+		  </div>
+		  </br>
+		  <h4>What is Full Stack Web Development and why is it important to learn?</h4>
+		  <div style="border:3px solid black;width=50px;height:150px;font-style:Arial;font-size:15px;font-width:bold;background-color:#FFDAB9;color:black;">
+		    Full Stack Development is a software profession/stream where a developer deals with both the Frontend (client-side) and Backend (server-side) of a tech product.
+			A Full Stack Developer is proficient in several technologies that help in developing a robust tech product,
+			and thus play a major role in making decisions for the company. It is one of the high-demand jobs in the software industry.
+		  </div>
+		  </br>
+		  <h4>What is the job of a Full Stack Developer?</h4>
+		  <div style="border:3px solid black;min-height:200px;max-height:400px;min-width:150px;max-width:300px;">
+            Full-stack developers develop both the front-end and the server-side of the application, deploy, debug and maintain their databases and servers.
+			Being a Full Stack Web Developer, you will be at an edge as you make better technical decisions and see the big picture.
+		  </div></br>
+		  <!---- inline and block elements -->
+		  
+		  <anchor style="font-width"bold"> Hi </anchor>
+		  <anchor style="font-width"bold"> Deepa </anchor>
+		  <anchor style="font-width"bold">How are you? </anchor>
+		  <p>HTML</p>
+		  <p>CSS</p>
+		  <p>JavaScript</p>
+		  
+	</body>
+	
+</html>
+========================================================================================================================================================
+11/MAY/2022
+========================================================================================================================================================
+Colors
+==============================================================
+In html we can apply the colors in 5 ways
+1)Color Name : Like red,blue,orange etc..
+
+2)rgb(255,255,255)
+the range of rgb is 0 to 255[FF]
+ex: color:rgb(0,255,255)
+
+3)hex color code - we start with #
+ex:color:#ff00ff
+
+4)HSL - hue saturation Lightness
+hue-hue is the degree on the color wheel from 0 to 360.
+0 is red
+120 is green
+240 is blue
+
+Saturation - Saturation is % value. O% means a shade of gray and 100% is the full color
+
+Lightness - Lightness is also % value. 0% is black and 100% is white
+
+ex:hsl(120,10%,20%)
+
+5)aplha - represents the degree of color transparancy
+a)rgba - extension of rgb with alpha
+a value range 0 to 1 
+ex: rgba(0,4,255,0.2)
+b)hsla - extesntion of hsl with alpha
+ex:hsla(120,10%,30%,0.3)
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,174 @@
+<html>
+     <head>
+	     <title>Array_Functions</title>
+	    
+		 <script src="array_functions.js"></script>
+	 </head>
+	 <body>
+	     <!--<ul>
+		 <h1>JavaScript Array concat() </h1>
+	     <li id="demo1"></li>
+	     <li id="demo2"></li>
+	     <li id="demo3"></li>
+		 </ul>
+		 
+		 <ul>
+		 <h1>JavaScript Array copyWithin()</h1>
+	     <li id="demo4"></li>
+	     <li id="demo5"></li>
+		 </ul>
+		 
+		 <ul>
+		 <h1>JavaScript Array entries()</h1>
+	     <li id="demo6"></li>
+	     
+		 </ul>
+		 
+		 <ul>
+		 <h1>JavaScript Array every()</h1>
+		 <h4>normal Function</h4>
+	     <li id="demo7"></li>
+		 <h4>Arrow Function</h4>
+	     <li id="demo8"></li>
+	     <li id="demo9"></li>
+		 </ul>
+		 
+		 <ul>
+		 <h1>JavaScript Array fill()</h1>
+	     <li id="demo10"></li>
+	     <li id="demo11"></li>
+		 </ul>
+		
+		 <ul>
+		 <h1>JavaScript Array filter()</h1>
+	     <li id="demo12"></li>
+	     
+		 </ul> 
+		 
+		 <ul>
+		 <h1>JavaScript Array find()</h1>
+	     <li id="demo"></li>
+	     <li id="demo13"></li>
+	     <li id="demo14"></li>
+	     
+		 </ul>
+		 <ul>
+		 <h1>JavaScript Array forEach()</h1>
+	     <li id="d"></li>
+	     <li id="demo15"></li>
+	     <li id="demo16"></li>
+	     
+		 </ul>
+		 <ul>
+		 <h1>JavaScript Array.from()</h1>
+	     <li id="d1"></li>
+	     <li id="demo17"></li>
+	     
+	     
+		 </ul>
+		 <ul>
+		 <h1>JavaScript Array.from()</h1>
+	     <li id="d2"></li>
+	     <li id="demo18"></li>
+	     
+	     
+		 </ul> -->
+		 <h1>JavaScript Array Object.keys()</h1>
+		 <div id="list"></div>
+		 <h1>JavaScript Array map()</h1>
+		 <div id="integers"></div>
+		 <div id="map"></div>
+		 <div id="ma1"></div>
+		 <h1>JavaScript Array prototype</h1>
+		 <div id="prototype"></div>
+		 <div id="prototype1"></div>
+		 <h1>JavaScript Array reduce()-->left to right</h1>
+		 <div id="reduce"></div>
+		 <div id="reduce1"></div>
+		 <h1>JavaScript Array reduceRight()-->right to left</h1>
+		 <div id="reduce2"></div>
+		 <div id="reduce3"></div>
+		 <div id="reduce4"></div>
+		 <script>
+		     
+		     /*document.getElementById('demo1').innerHTML=`Using concat()============> ${Name_Age}`
+		     document.getElementById('demo2').innerHTML=`Using spread operator============> ${merge}`
+		     document.getElementById('demo3').innerHTML=`Using plus operator============> ${mrge_plus}`
+			 			 
+		     document.getElementById('demo4').innerHTML=`JavaScript Array copyWithin()============> ${copy_nums_within}`
+		     document.getElementById('demo5').innerHTML=`JavaScript Array copyWithin()============> ${Name.copyWithin(3,0,3)}`
+			 
+			 for(i of fruits_entries)  //if we use in here , we won't get op bcz we don't have property[keyname] , we just have value that value writing key,value format
+             {
+                  document.getElementById('demo6').innerHTML+=i+`<br>`
+             }
+		     
+			 document.getElementById('demo7').innerHTML=`JavaScript Array every(),
+			 here checking  each element is greater than 18 or not============> ${ages_gt_18}`
+
+			 document.getElementById('demo8').innerHTML=`JavaScript Array every(),
+			 here checking  each element is greater than 18 or not============> ${ages_GT_18}`
+			 
+			 document.getElementById('demo9').innerHTML=`JavaScript Array every(),
+			 here checking  each element is greater than 18 or not============> ${ages_NE_18}`
+			 
+			 document.getElementById('demo10').innerHTML=`JavaScript Array fill(),
+			 created new array adding elemenet to that using fill()============> ${output}`
+			 
+			 
+			 document.getElementById('demo11').innerHTML=`JavaScript Array fill(),
+			 modifing output array by fill(value,start,end)============> ${modify_output}`
+			 
+			 //JavaScript Array filter()
+			 document.getElementById('demo12').innerHTML=`JavaScript Array filter(),
+			 creating a new array with element which has satisfied the given condition(printing less or eq 18 ages employees)
+			 ============> ${filter_ages}`
+			 //JavaScript Array find()
+			 document.getElementById('demo').innerHTML="The given array ------------------------>["+emp_ages+" "+"]"
+			 document.getElementById('demo13').innerHTML=`JavaScript Array find(),
+			 finding the elements which has satisfied the cond and returning 1st satisfied elelement from an array.
+			 ============> ${gt_18}`
+			 //JavaScript Array findIndex()
+			 document.getElementById('demo14').innerHTML=`JavaScript Array findIndex(),
+			 finding the elements which has satisfied the cond and returning position of 1st satisfied elelement from an array.
+			 ============> ${position_gt_18}`
+			 //JavaScript Array forEach()
+			 document.getElementById('d').innerHTML=numbers
+			 document.getElementById('demo15').innerHTML=`JavaScript Array forEach(),
+			 performing square function on each element of an array <br>
+			 this method doen't return the op , it saved the op in global variable
+			 ============> ${result}`
+			 //JavaScript Array.from()
+			 document.getElementById('d1').innerHTML=string
+			 document.getElementById('demo17').innerHTML=`JavaScript Array.from(),
+			 used to convert the strings into array
+			 ============> ${array}`
+			 //JavaScript Array includes()
+			 document.getElementById('d2').innerHTML=Fruitssss
+			 document.getElementById('demo18').innerHTML=`JavaScript Array includes(),
+			 used to check wheather the element is present or not ,it returns bool value.true-if found false=if not found
+			 ============> ${res} <br><br>
+			 this is case sensitive , searching same element orange but typed in caps includes("ORNAGE")==> ${res1}
+			 `*/
+			 //Object.keys()
+			 document.getElementById('list').innerHTML=list
+			 //JavaScript Array map()
+			 document.getElementById('integers').innerHTML=integers
+
+			 document.getElementById('map').innerHTML="created new array that contains squareroot of each eleemt of 'intergers' array"+map
+			 document.getElementById('ma1').innerHTML="created new array that contains *10 of each eleemt of 'intergers' array"+map1
+			 //prototype ==> Array.prototype.array_name=function () {} 
+			document.getElementById('prototype').innerHTML="converetd each element to uppercase "+student_names
+			document.getElementById('prototype1').innerHTML="converetd each element to lowecase "+student_name
+             //JavaScript Array reduce()
+			 document.getElementById('reduce').innerHTML="added all elements form left to right using reduce method :"+sum
+			 document.getElementById('reduce1').innerHTML="substracted all elements form left to right using reduce method :"+substraction
+			 //JavaScript Array reduceRight()-->right to left
+			 document.getElementById('reduce2').innerHTML="substracted all elements form right to left using reduce method :"+substraction1
+			 document.getElementById('reduce3').innerHTML="multiled  all elements form right to left using reduce method :"+multiplication
+			 document.getElementById('reduce4').innerHTML="divisiobn all elements from right to left using reduceRight method :"+divison
+
+		 </script>
+		 
+	 </body>
+</html>

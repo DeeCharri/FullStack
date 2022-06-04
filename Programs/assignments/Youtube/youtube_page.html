@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+     <head>
+	     <title>YouTube</title>
+		 <meta http-equiv="content-type" content="text\html" charset="UTF-8">
+		 <meta name="keyword" content="youtube,youtube.com">
+		 <meta name="description" content="Enjoy the videos and music you love, upload original content, and share it all with friends, family, and the world on YouTube.">
+		 <meta name="viewport" content="width=width=device-width;initial-scal=1.0">
+		 <link rel="icon" href="youtube.ico">
+		 <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+		 <link rel="stylesheet" href="/assets/css/docs.css">
+		 <script src="youtube.js"></script>
+		 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+	     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+         <style>
+		     * {
+			 box-sizing:border-box !important;
+			 
+			 }
+			 
+             .sidenav {
+			         position:fixed;
+					 top:5em;
+					 width:18%;
+					 height:87%;
+					 color:#FFFFF0 !important;
+					 margin-left:0px;
+					 float:left;
+					 z-index:1;
+                     					 
+					
+			 }
+			 .sidenav button:hover{
+			         border:none;
+					 color:black !important;
+					 font-weight:bold !important;
+			         background-color:gray;
+					 
+			 }
+			 span {
+			     font-family:Arial narrow !important;
+			 }	
+             .dropdown-content {
+                 display: none;
+                 position: absolute;
+                 background-color:rgba(0,0,0,0.5);
+                 min-width: 280px;
+                 
+                 z-index:9;
+             }
+             .dropdown {
+                      position: relative;
+                      display: inline-block;
+             }
+             .dropdown-content a {
+                 color: white;
+                 padding:1em 1em;
+                 text-decoration: none;
+                 display: block;
+				 z-index:9;
+             }
+
+                 .dropdown-content a:hover {background-color:rgba(0,0,0,0.5)}
+                 
+                 .dropdown:hover .dropdown-content {display: block;}
+                 
+                 .dropdown:hover .dropbtn {background-color:blue;}			 
+             		 
+		 </style>
+	</head>
+	<body style="max-width:100%;max-height:100%;background-color:#171717">
+	     <nav class="navbar navbar-expand-lg fixed-top pt-3 pb-3" style="z-index:1;">
+             <div class="container-fluid">
+			     <div><button id="3bars" type="submit" class="btn btn-0 btn-black border-0" style="background-color:#171717"><i class="fa-solid fa-bars text-white fs-2"></i></button>&emsp;&nbsp;
+                 <i class="fa-brands fa-youtube fs-3" style="color:red"></i><span class="text-white fs-4">YOUTUBE<sup class="text-secondary"><small>IN</small></sup></span>
+			 </div> 
+				 <div class="border border-secondary rounded-0">
+                 <input class="border-0 bg-black rounded-0 p-2"  type="search" placeholder="Search" style="width:32em;">
+				 <i class="fa-solid fa-magnifying-glass ps-3 pe-3 text-white fs-5"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Search"></i>
+			     </div>
+				 <div class="border-0 bg-black rounded-5 p-2"  data-bs-toggle="tooltip" data-bs-placement="bottom" title="Microphone" style="position:relative;right:3em;"><i class="fa-solid fa-microphone text-white fs-5 p-1"></i></div>
+				 
+				 <div class="dropdown">
+                 	 <button class="dropbtn btn border-0" style="background-color:#171717">
+		                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" 
+					     class="bi bi-grid-3x3-gap text-white" viewBox="0 0 16 16">
+                         <path d="M4 2v2H2V2h2zm1 12v-2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm5 10v-2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V7a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zm0-5V2a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1zM9 2v2H7V2h2zm5 0v2h-2V2h2zM4 7v2H2V7h2zm5 0v2H7V7h2zm5 0h-2v2h2V7zM4 12v2H2v-2h2zm5 0v2H7v-2h2zm5 0v2h-2v-2h2zM12 1a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1h-2zm-1 6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7zm1 4a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2z"/>
+                     </svg></button>
+					 
+					 <div class="dropdown-content">
+                         <a href="https://www.flipkart.com/communication-preferences/push?t=all"><i class="fa-brands fa-youtube text-danger"></i>&ensp;YouTube Movies</a>
+                         <a href="https://www.flipkart.com/helpcentre"><i class="fa-brands fa-youtube text-danger"></i>&ensp;YouTube Music</a>
+                         <a href="https://advertising.flipkart.com/login?returl=/?otracker=ch_vn_advertise_header"><i class="fa-brands fa-youtube text-danger"></i>&ensp;YouTube Kids</a>
+						 <a href="https://www.flipkart.com/mobile-apps?otracker=ch_vn_mobile_apps"><i class="fa-brands fa-youtube text-danger"></i>YouTube Artists</a>
+                      </div>					 
+					 
+     		     </div>
+				 <div class="dropdown">
+				 <button class="dropbtn btn border-0" style="background-color:#171717">
+				 <i class="fa-solid fa-ellipsis-vertical text-white fs-4"></i></button>
+				 <div class="dropdown-content">
+                         <a href="https://www.flipkart.com/communication-preferences/push?t=all"><i class="fa-thin fa-moon text-white"></i>&ensp;Apperance Device Theme</a>
+                         <a href="https://www.flipkart.com/helpcentre"><i class="fa-brands fa-language text-white"></i>&ensp;Language:English</a>
+                         <a href="https://advertising.flipkart.com/login?returl=/?otracker=ch_vn_advertise_header"><i class="fa-thin fa-globe text-white"></i>&ensp;Location:India</a>
+                         <a href="https://advertising.flipkart.com/login?returl=/?otracker=ch_vn_advertise_header"><i class="fa-thin fa-gear text-white"></i>&ensp;Settings</a>
+                         <a href="https://advertising.flipkart.com/login?returl=/?otracker=ch_vn_advertise_header"><i class="fa-thin fa-user-large text-white"></i>&ensp;Your Data In YouTube</a>
+                         <a href="https://advertising.flipkart.com/login?returl=/?otracker=ch_vn_advertise_header"><i class="fa-thin fa-circle-question text-white"></i>&ensp;Help</a>
+						 <a href="https://www.flipkart.com/mobile-apps?otracker=ch_vn_mobile_apps"><i class="fa-thin fa-keyboard text-white"></i>Keyboard Shortcuts</a>
+                      </div>
+				 </div>
+				 <div  class="text-white border border-primary">
+				     <button onclick="location.href='login_page.html'" class="btn text-primary fs-6 fw-bold" type="submit"><i class="fa-thin fa-circle-user text-primary fs-4"></i>&ensp;SIGN IN </button>
+     		     </div>
+				 
+             </div>
+			 
+		 </nav> 
+         	     
+		 <div class="sidenav border-0 border-black overflow-auto">
+			     <div class="list-group border-0">
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-solid fa-house"></i></i><span id="demo">&emsp;&emsp;HOME</span></button>                     
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-compass fs-4"></i><span id="demo1">&emsp;&emsp;EXPLORE</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-icons fs-4"></i><span id="demo2">&emsp;&emsp;SHORTS</span></button>
+                     <button type="button" class="btn text-white text-start p-2">
+					     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" 
+						 class="bi bi-collection-play" viewBox="0 0 16 16">
+                             <path d="M2 3a.5.5 0 0 0 .5.5h11a.5.5 0 0 0 0-1h-11A.5.5 0 0 0 2 3zm2-2a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 0-1h-7A.5.5 0 0 0 4 1zm2.765 5.576A.5.5 0 0 0 6 7v5a.5.5 0 0 0 .765.424l4-2.5a.5.5 0 0 0 0-.848l-4-2.5z"/>
+                             <path d="M1.5 14.5A1.5 1.5 0 0 1 0 13V6a1.5 1.5 0 0 1 1.5-1.5h13A1.5 1.5 0 0 1 16 6v7a1.5 1.5 0 0 1-1.5 1.5h-13zm13-1a.5.5 0 0 0 .5-.5V6a.5.5 0 0 0-.5-.5h-13A.5.5 0 0 0 1 6v7a.5.5 0 0 0 .5.5h13z"/>
+                         </svg><span id="demo3">&emsp;&emsp;SUBSCRIPTION</span></button>
+					 <button type="button" class="btn text-white text-start p-2">
+					     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" 
+						 class="bi bi-collection" viewBox="0 0 16 16">
+                         <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z"/>
+                         </svg><span id="demo4">&emsp;&emsp;Library</span></button>
+					 <button type="button" class="btn text-white text-start p-2">
+					     <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" 
+						 class="bi bi-clock-history" viewBox="0 0 16 16">
+                          <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022l-.074.997zm2.004.45a7.003 7.003 0 0 0-.985-.299l.219-.976c.383.086.76.2 1.126.342l-.36.933zm1.37.71a7.01 7.01 0 0 0-.439-.27l.493-.87a8.025 8.025 0 0 1 .979.654l-.615.789a6.996 6.996 0 0 0-.418-.302zm1.834 1.79a6.99 6.99 0 0 0-.653-.796l.724-.69c.27.285.52.59.747.91l-.818.576zm.744 1.352a7.08 7.08 0 0 0-.214-.468l.893-.45a7.976 7.976 0 0 1 .45 1.088l-.95.313a7.023 7.023 0 0 0-.179-.483zm.53 2.507a6.991 6.991 0 0 0-.1-1.025l.985-.17c.067.386.106.778.116 1.17l-1 .025zm-.131 1.538c.033-.17.06-.339.081-.51l.993.123a7.957 7.957 0 0 1-.23 1.155l-.964-.267c.046-.165.086-.332.12-.501zm-.952 2.379c.184-.29.346-.594.486-.908l.914.405c-.16.36-.345.706-.555 1.038l-.845-.535zm-.964 1.205c.122-.122.239-.248.35-.378l.758.653a8.073 8.073 0 0 1-.401.432l-.707-.707z"/>
+                          <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0v1z"/>
+                          <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5z"/>
+                         </svg><span id="demo5">&emsp;&emsp;History</span></button>
+					 <span id="demo6" class="text-center text-white">Sign in to like videos, comment and subscribe</span><br>
+					 <span id="demo7" class="text-center"><button onclick="location.href='login_page.html'" class="btn text-primary rounded-0 border-primary fs-6 fw-bold p-1border" type="submit"><i class="fa-thin fa-circle-user text-primary fs-4"></i>&ensp;SIGN IN</button></span>
+				     <span id="demo8" class="text-secondary mt-3 ps-2">BEST OF YOUTUBE</span><br>
+					 <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-music"></i><span id="demo9">&emsp;&emsp;Music</span></button>                     
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-person-running"></i><span id="demo">&emsp;&emsp;Sport</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-heart"></i><span id="demo10">&emsp;&emsp;Gaming</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-clapperboard"></i><span id="demo11">&emsp;&emsp;Films</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-newspaper"></i><span id="demo12">&emsp;&emsp;News</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-dna"></i><span id="demo13">&emsp;&emsp;Live</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-vest-patches"></i><span id="demo14">&emsp;&emsp;Fashion & beauty</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-lightbulb"></i><span id="demo15">&emsp;&emsp;Learning</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-brands fa-youtube"></i><span id="demo16">&emsp;&emsp;Spotlight</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-folder-closed"></i><span id="demo17">&emsp;&emsp;360° Video</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-circle-plus"></i><span id="demo18">&emsp;&emsp;Browse channels</span></button>                     
+                     <span id="demo" class="text-secondary ps-2">MORE FROM YOUTUBE</span>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-brands fa-youtube"></i><span id="demo">&emsp;&emsp;YouTube Premium</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-tower-broadcast"></i><span id="demo">&emsp;&emsp;Live</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-gear"></i><span id="demo">&emsp;&emsp;Settings</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-flag"></i><span id="demo">&emsp;&emsp;Report history</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-circle-question"></i><span id="demo">&emsp;&emsp;Help</span></button>
+                     <button type="button" class="btn text-white text-start p-2"><i class="fa-thin fa-message"></i><span id="demo">&emsp;&emsp;Send feedback</span></button>
+                             
+					 <span id="demo" class="text-secondary text-center">AboutPressCopyrightContact usCreatorAdvertiseDevelopers
+                           TermsPrivacyPolicy & SafetyHow YouTube worksTest new features
+                           © 2022 Google LLC</span>
+                 </div>
+				 
+					 
+				 
+			 </div>
+		  
+         </div>
+		 <hr class="border-1 border-secondary">
+		 <div class="sub_menu_bar position-fixed" style="margin-left:16em;margin-top:3em;width:80%;float:left;height:5em;z-index:0">
+			     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                 <div class="carousel-inner">
+                         <div class="carousel-item active">
+                             <ul class="list-group list-group-horizontal border-0 p-0 m-0">				 
+				                 <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">All</li>
+				                 <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Music</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">News</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Punit&nbsp;Rajkumar</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Yash</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Sports</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Live</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">FullStack&nbsp;WebDevelopment</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Convesation</li>
+				                 <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Fashion</li>
+	                          </ul>
+                         </div>
+                         <div class="carousel-item">
+                             <ul class="list-group list-group-horizontal border-0 p-0 m-0">
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Dress&nbsp;Stitching</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Dance</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Bharathanatya</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Movies</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">TV9</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Cricket</li>
+                                 <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Dress&nbsp;Stitching</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Dance</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Bharathanatya</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Movies</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">TV9</li>
+					             <li class=" p-0 m-1 bg-secondary list-group-item border-0 rounded-5 hover-shadow"><button type="submit" class="btn text-white rounded-4 bg-secondary">Cricket</li>
+                             
+							 </ul>
+                         </div>
+                 </div>
+                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                 <span class="visually-hidden">Previous</span>
+                 </button>
+                 <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                 <span class="visually-hidden">Next</span>
+                 </button>
+         </div>
+			 </div>
+			 
+             <hr class="border-1 border-secondary">
+			 <div class="video_section" class="bg-black" style="margin-left:16em;margin-top:5em;width:80%;float:left;height:700px;opacity:0.5">
+			     <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/R-AaPXZyKKY" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/1uUEZ6Piv_k" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+				 
+				 <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/-RuSqMYcQK0"  
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/IXKu3w5-glc" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/-RuSqMYcQK0" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+			     <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/AFEZzf9_EHk" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/R4He_Gcn7cA" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+				 <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/Qah9sSIXJqk"
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/-RuSqMYcQK0" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+			     <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+				 <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+			     <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+				 <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+			     <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+				 <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+			     <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+				 <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+			     <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+				 <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+			     <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+				 <ul class="list-group list-group-horizontal border-0">
+				 
+				     <li class="list-group-item border-0 border-black m-1 p-3 bg-black">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 
+					 </li>
+				     <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+					 </li>
+					 <li class="list-group-item border-0 border-black bg-black m-1 p-3">
+					     <iframe width="320" height="240" 
+                             src="https://www.youtube.com/embed/3s5XyooFGpg" 
+                             title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; 
+                             clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+						 </iframe>
+				 </li></ul>
+			 
+			 </div>
+		 
+	</body>
+</html>

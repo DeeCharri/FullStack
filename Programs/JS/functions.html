@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <script src="functions.js"></script>
+</head>
+<body>
+     <p id="function">      </p>
+	 <p id="function1">      </p>
+	 <p id="function2">      </p>
+	 <p id="function3">      </p>
+	 <p id="function4">      </p>
+	 <p id="function5">      </p>
+	 <p id="function6">      </p>
+	 <p id="function7">      </p>
+	 <p id="function8">      </p>
+	 <p id="function9" class="para"> hi   </p>
+	 <button id="button1" onclick="document.getElementById('function4').innerHTML=Hello1('nagu','goodMorning')">CLick Me</button> &emsp; &emsp;
+	 <button id="button1" onclick="document.getElementById('function4').style.color='red'">Change Me</button>&emsp; &emsp;
+	 <button onclick="document.getElementById('function1').style.fontSize='35px'">Font_Size</button>&emsp; &emsp;
+	 
+	 
+	 
+	 <script>
+	     function Hello1(name,msg,extra)
+         {
+		      
+              let display=`Hi ${name} , ${msg},How are You?`
+			  document.getElementById("function5").innerHTML=extra
+         	  return display
+         }
+
+	     document.getElementById("function").innerHTML = sum
+		 document.getElementById("function1").innerHTML = html
+		 document.getElementById("function2").innerHTML = greetings
+		 document.getElementById("function3").innerHTML=Hello('Veer','Good Evening')
+		 document.getElementById("function6").innerHTML=final1
+		 
+		 let tag1=document.getElementById('function9');
+	     document.write(tag1.id,`<br>`)
+		 
+	 </script>
+	 
+</body>
+
+</html>

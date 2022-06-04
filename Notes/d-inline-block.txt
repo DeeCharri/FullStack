@@ -1,0 +1,8 @@
+collapse navbar-collapse
+
+d-inline-block
+to set one line
+
+d-flex flex-nowrap bd-highlight
+m-2 p-2 bd-highlight
+border-bottom -it's not worming
