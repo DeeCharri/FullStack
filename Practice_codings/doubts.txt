@@ -1,0 +1,44 @@
+function fibonacci(num)
+{
+	if ( num < 2)
+	{
+		return num
+	}else
+	{
+		return fibonacci(num-1)+fibonacci(num-2)
+	}
+}
+
+for(let i=0;i<5;i++)
+{
+	console.log(fibonacci(i))
+}
+
+or 
+
+function fibonacci(num,n1=0,n2=1)
+{
+	
+	
+	if ( num == 0)
+	{
+		return num
+	}else
+	{
+		let n3=n1+n2
+		console.log(n1)
+		n1=n2;
+		n2=n3;
+		return fibonacci(num-1,n1,n2)
+	}
+
+}
+let n=parseInt(prompt("enter a number"))
+if(n > 0)
+{
+     fibonacci(n)
+}
+
+
+
+

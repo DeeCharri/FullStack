@@ -1,0 +1,98 @@
+1. we can overwrite defalult values and passed values[ values which we are passed while object creating within the paranthesis]
+ by local variable values.
+ 
+2. local variable  are nothing but the variable which we can defined withing the function/method.
+they are local to thr function only not other function /methods.
+
+
+3. In static method or  class  method , if we tries to display the 
+properties of objects,  we get undefined for all peorpeties except Name property. Name is taking same as class name.
+
+ex:
+class person{
+      constructor(name,age)
+	  {
+	      this.name=name;
+		  this.age=age
+	  }
+	  static display_details()
+	  {
+	       console.log("Hello All I am Class method , static keyword helps me to convert my self into class method 
+		   from object method")
+		   //tring to access object properties.
+	       console.log(`Name: ${this.name}   Age: ${this.age}`)
+	  }
+}
+Obervations:----------------------------------------------------------------------------
+1.
+person.display_details()
+
+op:
+
+Hi I am class method. static helps me to convert myself into class method from object method
+clsses.js:66  Name:person , Age: undefined
+---------------------------------------------------------------------------------------------
+2.
+person.display_details("Deepa",24) // passing value for object properties 
+op:
+Hi I am class method. static helps me to convert myself into class method from object method
+clsses.js:66  Name:person , Age: undefined
+---------------------------------------------------------------------------------------------
+3.
+let person1=new person("Deepa",24)
+person.display_details(person1) // create a object called person1 and passing that to class method 
+op:
+Hi I am class method. static helps me to convert myself into class method from object method
+clsses.js:66  Name:person , Age: undefined
+---------------------------------------------------------------------------------------------
+4.
+assigned defalult values in constructor, 
+ constructor(name,age)
+	  {
+	      this.name="Deepa";
+		  this.age=24
+	  }
+person.display_details(person1) 
+op:
+Hi I am class method. static helps me to convert myself into class method from object method
+clsses.js:66  Name:person , Age: undefined
+---------------------------------------------------------------------------------------------
+
+
+// for static method /class method we have pass  parameters
+static display_details(name,age) 
+	 {
+		 console.log("Hi I am class method. static helps me to convert myself into class method from object method")
+		  		  
+		 console.log(`Name:${name},   Age: ${age}`)
+	 }
+
+op:
+
+Hi I am class method. static helps me to convert myself into class method from object method
+clsses.js:66 Name:gagan,   Age: 25
+
+
+======================================================================================================================
+
+class is not hoisted , here we shold have to declare the class before creating a object
+
+fig:1
+let p1= new person()
+
+class person{
+constructor()
+{
+   this.name="Deepa"
+}
+
+}
+
+//fig:1 --> this is won't work in class we get error so we sgold have to define the class first 
+then we can able to create a object from that class
+
+
+classes always allow follow "use strict"
+All code inside the class automatically turned into strict mode
+
+type of class is always function
